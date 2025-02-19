@@ -1,0 +1,66 @@
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    background: #fea20e;
+}
+
+.about-logo img {
+    width: 350px;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    max-width: 600px;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#projects-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    background: #011659;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#projects-btn i {
+    transition: transform 0.3s;
+}
+
+#projects-frame {
+    display: none;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project {
+    width: 280px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.project img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none;
+}
