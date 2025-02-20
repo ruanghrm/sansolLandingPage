@@ -33,7 +33,8 @@
 
     #simulation-form input {
         padding: 12px;
-        width: 280px;
+        width: 100%;
+        max-width: 280px;
         border: none;
         border-radius: 5px;
         font-size: 1rem;
@@ -106,5 +107,85 @@
         gap: 8px;
         margin-top: 15px;
         padding: 10px 15px;
+        cursor: pointer;
       }
+
+      .btn-bill:hover {
+        background-color: #0d1f42 
+      }
+
+      #whatsApp-btn:hover {
+        background-color: #038131;
+      }
+
+      @media screen and (max-width: 768px) {
+        #simulations {
+            padding: 40px 10px;
+        }
+    
+        .section-title {
+            font-size: 1.5rem; 
+        }
+    
+        .section-subtitle {
+            font-size: 1rem;
+        }
+    
+        #simulation-form {
+            padding: 20px;
+            max-width: 90%; 
+        }
+    
+        #simulation-form input {
+            padding: 10px;
+            font-size: 0.9rem; 
+        }
+    
+        #simulate-btn {
+            padding: 10px 20px; 
+        }
+    
+        #simulation-result {
+            font-size: 1rem; 
+        }
+    
+        #whatsApp-btn {
+            font-size: 14px;
+        }
+    
+        .btn-bill {
+            padding: 8px 12px; 
+        }
+    }
+    
+    @media screen and (max-width: 450px) {
+        .section-title {
+            font-size: 1.2rem;
+        }
+    
+        .section-subtitle {
+            font-size: 0.9rem;
+        }
+    
+        #simulation-form {
+            padding: 15px;
+        }
+    
+        #simulation-form input {
+            width: 100%;
+            padding: 8px; 
+        }
+    
+        #simulate-btn {
+            padding: 8px 15px; 
+        }
+    
+        #whatsApp-btn {
+            padding: 8px 12px; 
+        }
+    
+        .btn-bill {
+            padding: 8px 12px; 
+        }
+    }  
       

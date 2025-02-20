@@ -502,6 +502,8 @@ document.addEventListener("DOMContentLoaded", function () {
             valor25AnosCom = 5659462.18;
         }
 
+        localStorage.setItem('contaComSolar', contaComSolar);
+
         document.getElementById('contaComSolar').textContent = `R$ ${contaComSolar.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
         document.getElementById('economiaMensal').textContent = `R$ ${economiaMensal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
         document.getElementById('parcelaBanco84').textContent = `R$ ${parcelaBanco84.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
@@ -544,9 +546,10 @@ $(document).ready(function() {
 
         var phoneRegex = /^\(\d{2}\) 9\d{4}-\d{4}$/;
         if (!phoneRegex.test(phone)) {
-            alert('O número deve estar no formato (xx) 9 xxxx-xxxx.');
             return;
         }
+
+        localStorage.setItem('name', name); 
 
         if (name && phone && bill) {
             $.ajax({
@@ -570,6 +573,7 @@ $(document).ready(function() {
         }
     });
 });
+
 
 
 

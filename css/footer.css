@@ -7,6 +7,7 @@ footer {
     justify-content: space-between;
     padding: 0px 8% 24px 8%;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 #copyright {
@@ -14,9 +15,29 @@ footer {
     font-weight: 500;
 }
 
-@media screen and (max-width: 600px) {
-    #footer_items {
+@media screen and (max-width: 768px) {
+    #footer_itens {
+        padding: 0px 5% 20px 5%;
+    }
+
+    #footer_itens {
         flex-direction: column;
         gap: 20px;
+        align-items: center;
+    }
+
+    #copyright {
+        font-size: 0.9rem;
     }
 }
+
+@media screen and (max-width: 450px) {
+    #footer_itens {
+        padding: 0px 3% 16px 3%;
+    }
+
+    #copyright {
+        font-size: 0.8rem;
+    }
+}
+

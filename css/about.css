@@ -64,3 +64,54 @@
 .hidden {
     display: none;
 }
+
+@media screen and (max-width: 768px) {
+    #about {
+        padding: 40px 15px;
+    }
+
+    .about-logo img {
+        width: 300px; 
+    }
+
+    .about-text {
+        font-size: 1rem; 
+        max-width: 90%; 
+    }
+
+    #projects-btn {
+        padding: 10px 18px;
+        font-size: 0.9rem; 
+    }
+
+    #projects-frame {
+        max-width: 100%; 
+    }
+
+    .project {
+        width: 250px; 
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #about {
+        padding: 30px 10px;
+    }
+
+    .about-logo img {
+        width: 250px;
+    }
+
+    .about-text {
+        font-size: 0.9rem;
+    }
+
+    #projects-btn {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+    .project {
+        width: 200px;
+    }
+}
