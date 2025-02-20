@@ -55,19 +55,18 @@ $(document).ready(function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('phone').addEventListener('input', function (e) {
-        let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+        let value = e.target.value.replace(/\D/g, ''); 
 
-        // Formata para (xx) 9xxxx-xxxx sem espaço extra após o 9
         if (value.length >= 3) {
-            value = value.replace(/^(\d{2})(9)/, '($1) $2'); // (xx) 9
+            value = value.replace(/^(\d{2})(9)/, '($1) $2'); 
         }
 
         if (value.length > 8) {
-            value = value.replace(/(\d{5})(\d{4})/, '$1-$2'); // 9xxxx-xxxx
+            value = value.replace(/(\d{5})(\d{4})/, '$1-$2');
         }
 
         if (value.length > 15) {
-            value = value.slice(0, 11); // Limita ao formato esperado
+            value = value.slice(0, 11);
         }
 
         e.target.value = value;
