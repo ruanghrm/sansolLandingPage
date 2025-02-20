@@ -85,6 +85,10 @@
     font-size: 1px;
 }
 
+#cta_buttons_mobile {
+    display: none;
+}
+
 @media screen and (max-width: 1170px) {
     #home {
         min-height: 100%;
@@ -101,6 +105,20 @@
         width: 100%;
         text-align: center;
         align-items: center;
+    }
+
+    #cta_buttons {
+        display: none;
+    }
+
+    #cta_buttons_mobile {
+        display: flex;
+        gap: 24px;
+    }
+    
+    #cta_buttons_mobile a {
+        text-decoration: none;
+        color: white;
     }
 }
 

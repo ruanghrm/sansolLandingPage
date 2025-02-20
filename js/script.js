@@ -553,7 +553,7 @@ $(document).ready(function() {
 
         if (name && phone && bill) {
             $.ajax({
-                url: 'http://35.184.186.154:3000/clientes',
+                url: 'https://www.sansolenergiasolar.com.br/api/clientes',
                 type: 'POST',
                 contentType: 'application/json', 
                 data: JSON.stringify({
