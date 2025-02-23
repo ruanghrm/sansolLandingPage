@@ -461,6 +461,22 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 $(document).ready(function() {
+    $.ajax({
+        url: 'https://www.sansolenergiasolar.com.br/api/vendedores',
+        type: 'GET',
+        success: function(response) {
+            var sellerSelect = $('#seller');
+            response.forEach(function(vendedor) {
+                sellerSelect.append('<option value="' + vendedor + '">' + vendedor + '</option>');
+            });
+        },
+        error: function(xhr, status, error) {
+            console.error('Erro ao carregar vendedores:', error);
+        }
+    });
+});
+
+$(document).ready(function() {
     $('#simulate-btn').click(function(e) {
         e.preventDefault();
 
@@ -496,22 +512,6 @@ $(document).ready(function() {
             });
         } else {
             alert('Por favor, preencha todos os campos.');
-        }
-    });
-});
-
-$(document).ready(function() {
-    $.ajax({
-        url: 'https://www.sansolenergiasolar.com.br/api/vendedores',
-        type: 'GET',
-        success: function(response) {
-            var sellerSelect = $('#seller');
-            response.forEach(function(vendedor) {
-                sellerSelect.append('<option value="' + vendedor + '">' + vendedor + '</option>');
-            });
-        },
-        error: function(xhr, status, error) {
-            console.error('Erro ao carregar vendedores:', error);
         }
     });
 });
