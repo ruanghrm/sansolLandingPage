@@ -467,7 +467,7 @@ $(document).ready(function() {
         var name = $('#name').val();
         var phone = $('#phone').val();
         var bill = $('#bill').val();
-        var nomeVendedor = $('#seller').val();
+        var vendedor = $('#seller').val();
 
         var phoneRegex = /^\(\d{2}\) 9\d{4}-\d{4}$/;
         if (!phoneRegex.test(phone)) {
@@ -485,7 +485,7 @@ $(document).ready(function() {
                     nome: name,
                     numero: phone,
                     contaLuz: bill,
-                    vendedor: nomeVendedor
+                    vendedor: vendedor
                 }),
                 success: function(response) {
                     console.log('✅ right', response);
