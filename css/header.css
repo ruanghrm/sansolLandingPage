@@ -1,7 +1,10 @@
 header {
     width: 100%;
-    padding: 28px 8%;
-    position: flex;
+    padding: 2px 8%;
+    position: sticky;
+    top: 0;
+    background-color: #fe6b0e;
+    z-index: 100000;
 }
 
 #navbar {
@@ -9,6 +12,10 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+#navbar img {
+    width: 250px;
 }
 
 #nav_logo {
@@ -49,6 +56,10 @@ header {
     #nav_list,
     #navbar .btn-default {
         display: none;
+    }
+
+    #navbar img {
+        width: 250px;
     }
 
     #mobile_btn {

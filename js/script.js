@@ -1,38 +1,39 @@
 $(document).ready(function () {
     $('#mobile_btn').on('click', function () {
-        $('#mobile_menu').toggleClass('active')
+        $('#mobile_menu').toggleClass('active');
         $('#mobile_btn').find('i').toggleClass('fa-x');
     });
 
-    const sections = $('section');
-    const navItems = $('.nav-item')
+    const navItems = $('.nav-item');
+    const sections = navItems.map(function() {
+        return $($(this).find('a').attr('href'))[0];
+    });
 
     $(window).on('scroll', function() {
         const header = $('header');
         const scrollPosition = $(window).scrollTop() - header.outerHeight();
-
         let activeSectionIndex = 0;
 
-        if (scrollPosition <= 0) {
-            header.css('box-shadow', 'none')
-        } else {
-            header.css('box-shadow', '5px 1px 5px rgba(0, 0, 0, 0.1');
-        }
-
-        sections.each(function(i) {
+        $(sections).each(function(i) {
             const section = $(this);
-            const sectionTop = section.offset().top - 96;
-            const sectionBottom = sectionTop + section.outerHeight();
+            const sectionTop = $(section).offset().top - 96;
+            const sectionBottom = sectionTop + $(section).outerHeight();
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
                 activeSectionIndex = i;
                 return false;
             }
-        })
+        });
+
+        if ($(window).scrollTop() + $(window).height() >= $(document).height() - 10) {
+            activeSectionIndex = sections.length - 1;
+        }
 
         navItems.removeClass('active');
         $(navItems[activeSectionIndex]).addClass('active');
     });
+
+    
 
     ScrollReveal().reveal('#cta', {
         origin: 'left',
@@ -42,6 +43,12 @@ $(document).ready(function () {
 
     ScrollReveal().reveal('#simulations', {
         origin: 'right',
+        duration: 2000,
+        distance: '50%'
+    })
+
+    ScrollReveal().reveal('#testimonials', {
+        origin: 'bottom',
         duration: 2000,
         distance: '50%'
     })
@@ -566,6 +573,18 @@ $(document).ready(function() {
     });
 });
 
-
-
-
+document.addEventListener('DOMContentLoaded', function() {
+    const thumbnails = document.querySelectorAll('.thumbnail-item');
+    const mainVideoIframe = document.getElementById('main-video-iframe');
+    const mainVideoTitle = document.getElementById('main-video-title');
+  
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', function() {
+        const videoSrc = thumbnail.getAttribute('data-video');
+        const videoTitle = thumbnail.getAttribute('data-title');
+  
+        mainVideoIframe.src = videoSrc;
+        mainVideoTitle.textContent = videoTitle;
+      });
+    });
+  });

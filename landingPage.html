@@ -1,370 +1,405 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="icon" type="image/png" href="assets/icons/favicon.ico">
-    <link rel="apple-touch-icon" sizes="192x192" href="assets/icons/android-chrome-192x192.png">
-    <link rel="apple-touch-icon" sizes="512x512" href="assets/icons/android-chrome-512x512.png">
-    <link rel="manifest" href="assets/icons/site.webmanifest">
-        <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <title>Sansol Engenharia - Cidade Nova</title>
-  </head>
 
-  <body>
-    <header>
-      <nav id="navbar">
-        <img src="assets/image/logotipo-sansol-horizontal-1024x279.png" alt="logo" class="teste">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/png" href="assets/icons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="192x192" href="assets/icons/android-chrome-192x192.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="assets/icons/android-chrome-512x512.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.polyfills.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <title>Sansol Engenharia - Cidade Nova</title>
+</head>
 
-        <ul id="nav_list">
-          <li class="nav-item active">
-            <a href="#home">Início</a>
-          </li>
-          <li class="nav-item">
-            <a href="emBreve.html">Indicações</a>
-          </li>
-          <li class="nav-item">
-            <a href="emBreve.html">Pós-Venda</a>
-          </li>
-        </ul>
+<body>
+  <header>
+    <nav id="navbar">
+      <img src="assets/image/logotipo-sansol-horizontal-1024x279.png" alt="logo" class="teste">
 
-        <button class="btn-default">
-         <a href="emBreve.html">Faça seu cadastro</a>
-        </button>
+      <ul id="nav_list">
+        <li class="nav-item active">
+          <a href="#home">Início</a>
+        </li>
+        <li class="nav-item">
+          <a href="#simulations">Simulações</a>
+        </li>
+        <li class="nav-item">
+          <a href="#testimonials">Depoimentos</a>
+        </li>
+        <li class="nav-item">
+          <a href="#about">Sobre</a>
+        </li>
+      </ul>
 
-        <button id="mobile_btn">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </nav>
+      <button class="btn-default">
+        <a href="emBreve.html">Faça seu cadastro</a>
+      </button>
 
-      <div id="mobile_menu">
-        <ul id="mobile_nav_list">
-          <li class="nav-item">
-            <a href="#home">Início</a>
-          </li>
-          <li class="nav-item">
-            <a href="emBreve.html">Indicações</a>
-          </li>
-          <li class="nav-item">
-            <a href="emBreve.html">Pós-venda</a>
-          </li>
-        </ul>
+      <button id="mobile_btn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
 
-        <button class="btn-default">
-          <a href="emBreve.html">Faça seu cadastro</a>
-         </button>
-      </div>
-    </header>
+    <div id="mobile_menu">
+      <ul id="mobile_nav_list">
+        <li class="nav-item">
+          <a href="#home">Início</a>
+        </li>
+        <li class="nav-item">
+          <a href="#simulations">Simulações</a>
+        </li>
+        <li class="nav-item">
+          <a href="#testimonials">Depoimentos</a>
+        </li>
+        <li class="nav-item">
+          <a href="#about">Sobre</a>
+        </li>
+      </ul>
 
-    <main id="content">
-      <section id="home">
-        <div class="shape"></div>
-        <div id="cta">
-          <h1 class="title">
-            Faça sua simulação com a
-            <span>Sansol</span>
-          </h1>
+      <button class="btn-default">
+        <a href="emBreve.html">Faça seu cadastro</a>
+      </button>
+    </div>
+  </header>
 
-          <p class="description">
-            A Sansol é uma empresa especializada em fornecer soluções de energia
-            solar para reduzir os custos da sua conta de luz. Realize uma
-            simulação e descubra como a energia solar pode transformar sua vida!
-          </p>
+  <main id="content">
+    <section id="home">
+      <div class="shape"></div>
+      <div id="cta">
+        <h1 class="title">
+          Faça sua simulação com a
+          <span>Sansol</span>
+        </h1>
 
-          <div id="cta_buttons">
-            <a href="#simulations" class="btn-default"> Fazer simulação </a>
+        <p class="description">
+          A Sansol é uma empresa especializada em fornecer soluções de energia
+          solar para reduzir os custos da sua conta de luz. Realize uma
+          simulação e descubra como a energia solar pode transformar sua vida!
+        </p>
 
-            <a href="tel:+5591991184053" id="phone_button">
-              <button class="btn-default2">
-                <i class="fa-solid fa-phone"></i>
-              </button>
-              <p class="text">(91) 99118-4053</p>
-            </a>
-          </div>
+        <div id="cta_buttons">
+          <a href="#simulations" class="btn-default"> Fazer simulação </a>
 
-          <div id="cta_buttons_mobile">
-            <a href="tel:+5591991184053" id="phone_button">
-              <button class="btn-default2">
-                <i class="fa-solid fa-phone"></i>
-              </button>
-              <p class="text">(91) 99118-4053</p>
-            </a>
-          </div>
-
-          <div class="social_media_buttons">
-            <a href="https://wa.me/5591991184053">
-              <i class="fa-brands fa-whatsapp"></i>
-            </a>
-
-            <a href="https://www.instagram.com/sansolengenhariasolar/reel/C_QRsyiOmXO/">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-
-            <a href="https://www.facebook.com/sansolananin?mibextid=LQQJ4d&rdid=DOF5KViFE39wYQrm&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F15ba8bXxgq%2F%3Fmibextid%3DLQQJ4d#">
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-
-            <a href="https://www.youtube.com/@SansolCidadeNova">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          </div>
-        </div>
-
-        <div id="banner">
-          <img src="assets/image/hero1.png" alt="" />
-        </div>
-      </section>
-
-      <section id="simulations">
-        <h2 class="section-title">Simule sua Economia</h2>
-        <h3 class="section-subtitle">Insira seus dados e veja o resultado</h3>
-
-        <div id="simulation-form">
-          <input type="text" id="name" placeholder="Nome" required />
-          <input type="tel" id="phone" placeholder="Telefone" required />
-          <input
-            type="text"
-            id="bill"
-            placeholder="Valor da Conta de Luz"
-            required
-          />
-          <button id="simulate-btn">Calcular</button>
-        </div>
-
-        <div id="simulation-result" class="hidden">
-          <h3>Resultados da Simulação</h3>
-          <p>
-            💡 Conta com Energia Solar:
-            <span id="contaComSolar">R$0,00</span>
-          </p>
-          <p>💸 Desconto Mensal: <span id="economiaMensal">R$0,00</span></p>
-          <p>
-            🏦 Investimento Kit Solar:
-            <span id="parcelaBanco84">R$0,00</span>
-          </p>
-          <p>
-            📅 Kit Solar: <span id="numeroMod">0</span> Placas
-            <span id="description"></span>
-          </p>
-          <p>
-            💰 Nos próximos anos irei perder para EQUATORIAL sem energia solar:
-           <span id="valor25AnosSem">R$0,00</span>
-          </p>
-          <p>
-            💰 Minha economia com energia solar nos próximos anos:
-            <span id="valor25AnosCom">R$0,00</span>
-          </p>
-
-          <br /><br />
-          <h3>Quer Economizar?</h3>
-          <br />
-          <h3>Entre em contato pelo nosso WhatsApp</h3>
-
-          <a href="https://wa.me/5591991184053" target="_blank">
-            <button id="whatsApp-btn" class="fa-brands fa-whatsapp">
-                <p>Falar no WhatsApp</p>
+          <a href="tel:+5591991184053" id="phone_button">
+            <button class="btn-default2">
+              <i class="fa-solid fa-phone"></i>
             </button>
+            <p class="text">(91) 99118-4053</p>
           </a>
+        </div>
 
-          <a href="conta-energia.html">
+        <div id="cta_buttons_mobile">
+          <a href="tel:+5591991184053" id="phone_button">
+            <button class="btn-default2">
+              <i class="fa-solid fa-phone"></i>
+            </button>
+            <p class="text">(91) 99118-4053</p>
+          </a>
+        </div>
+
+        <div class="social_media_buttons">
+          <a href="https://wa.me/5591991184053" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        
+        <a href="https://www.instagram.com/sansolengenhariasolar/reel/C_QRsyiOmXO/" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        
+        <a href="https://www.facebook.com/sansolananin?mibextid=LQQJ4d&rdid=DOF5KViFE39wYQrm&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F15ba8bXxgq%2F%3Fmibextid%3DLQQJ4d#" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        
+        <a href="https://www.youtube.com/@SansolCidadeNova" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+        
+        <a href="https://www.linkedin.com/company/sansol-engenharia-solar-cidade-nova/" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+        </a>
+        
+        <a href="https://www.tiktok.com/@sansolananin?is_from_webapp=1&sender_device=pc" target="_blank">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+        </div>
+      </div>
+
+      <div id="banner">
+        <img src="assets/image/hero1.png" alt="" />
+      </div>
+    </section>
+
+    <section id="simulations">
+      <h2 class="section-title">Simule sua Economia</h2>
+      <h3 class="section-subtitle">Insira seus dados e veja o resultado</h3>
+
+      <div id="simulation-form">
+        <input type="text" id="name" placeholder="Nome" required />
+        <input type="tel" id="phone" placeholder="Telefone" required />
+        <input type="text" id="bill" placeholder="Valor da Conta de Luz" required />
+        <button id="simulate-btn">Calcular</button>
+      </div>
+
+      <div id="simulation-result" class="hidden">
+        <h3>Resultados da Simulação</h3>
+        <p>
+          💡 Conta com Energia Solar:
+          <span id="contaComSolar">R$0,00</span>
+        </p>
+        <p>💸 Desconto Mensal: <span id="economiaMensal">R$0,00</span></p>
+        <p>
+          🏦 Investimento Kit Solar:
+          <span id="parcelaBanco84">R$0,00</span>
+        </p>
+        <p>
+          📅 Kit Solar: <span id="numeroMod">0</span> Placas
+          <span id="description"></span>
+        </p>
+        <p>
+          💰 Nos próximos anos irei perder para EQUATORIAL sem energia solar:
+          <span id="valor25AnosSem">R$0,00</span>
+        </p>
+        <p>
+          💰 Minha economia com energia solar nos próximos anos:
+          <span id="valor25AnosCom">R$0,00</span>
+        </p>
+
+        <br /><br />
+        <h3>Quer Economizar?</h3>
+        <br />
+        <h3>Entre em contato pelo nosso WhatsApp</h3>
+
+        <a href="https://wa.me/5591991184053" target="_blank">
+          <button id="whatsApp-btn" class="fa-brands fa-whatsapp">
+            <p>Falar no WhatsApp</p>
+          </button>
+        </a>
+
+        <a href="conta-energia.html">
           <br /><button class="btn-bill">
             VEJA SUA CONTA COM ENERGIA SOLAR
           </button>
         </a>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="about">
-        <div class="about-logo">
-          <img src="assets/image/sansolLogoBack.png" alt="Logo da Empresa" />
-        </div>
+    <section id="testimonials">
+      <!-- <div class="background">
+        <img src="assets/image/selo.png" alt="sansol">
+      </div>
+      <div class="video-container"> -->
+        <section id="testimonials">
+          <div class="containerT">
+            <h2>O que nossos clientes dizem</h2>
+            <p class="testimonial-description">Veja como nossos clientes estão satisfeitos com os resultados que
+              entregamos. Assista aos depoimentos reais e descubra como podemos transformar o seu projeto também!</p>
 
-        <div class="about-text">
-          <p>
-            Desde 2012, o governo brasileiro incentiva o uso de energia solar,
-            oferecendo descontos na conta de luz para quem adere a essa solução
-            sustentável. E desde 2015, estamos ajudando famílias e empresas no
-            Pará a economizar até
-            <strong>80%</strong> na conta de energia, com instalações rápidas,
-            seguras e sem complicações. <br /><br />
-            Já são centenas de clientes satisfeitos que transformaram suas vidas
-            e negócios com a energia solar. E o melhor, contam com o melhor
-            serviço de pós-venda do estado, garantindo tranquilidade e suporte
-            sempre que precisarem. <br /><br />
-            Nossa missão é simples: democratizar o acesso à energia solar,
-            levando economia e sustentabilidade para cada vez mais lares e
-            empresas no Pará. <br /><br />
-            <strong>Solicite uma sessão de orientação agora mesmo</strong> e dê
-            o primeiro passo para reduzir sua conta de luz de forma definitiva!
-          </p>
-        </div>
+            <div class="video-container">
+              <div class="main-video">
+                <iframe id="main-video-iframe" src="assets/videos/vidEliasSantos.mp4" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+                <p id="main-video-title">Elias Santos</p>
+              </div>
 
-        <button id="projects-btn">
-          Veja nossos projetos <i class="fa-solid fa-chevron-down"></i>
-        </button>
-
-        <div id="projects-frame" class="hidden">
-          <div class="project">
-            <img
-              src="assets/image/imageProjects/norteGeradores1.jpg"
-              alt="Projeto 1"
-            />
-            <p>
-              Norte Geradores<br />
-              Centro - Benevides/PA
-            </p>
+              <div class="thumbnails">
+                <div class="thumbnail-item" data-video="assets/videos/vidEliasSantos.mp4" data-title="Elias Santos">
+                  <img src="assets/thumbnails/eliasTMB.png" alt="Elias Santos" class="thumbnail-image">
+                  <p>Elias Santos</p>
+                </div>
+                <div class="thumbnail-item" data-video="assets/videos/vidGabrielCasteloBranco.mp4"
+                  data-title="Gabriel Castelo Branco">
+                  <img src="assets/thumbnails/GabrielTMB.png" alt="Gabriel Castelo Branco" class="thumbnail-image">
+                  <p>Gabriel C. Branco</p>
+                </div>
+                <div class="thumbnail-item" data-video="assets/videos/vidJorgeSoraya.mp4" data-title="JorgeSoraya">
+                  <img src="assets/thumbnails/JorgeESoraiaTMB.png" alt="Jorge e Soraya" class="thumbnail-image">
+                  <p>Jorge e Soraya</p>
+                </div>
+                <div class="thumbnail-item" data-video="assets/videos/vidKellyS.mp4" data-title="Kelly S">
+                  <img src="assets/thumbnails/Kelly S.png" alt="Kelly S." class="thumbnail-image">
+                  <p>Kelly S.</p>
+                </div>
+                <div class="thumbnail-item" data-video="assets/videos/vidMurilo.mp4" data-title="Murilo">
+                  <img src="assets/thumbnails/muriloTMB.png" alt="Murilo" class="thumbnail-image">
+                  <p>Murilo</p>
+                </div>
+                <div class="thumbnail-item" data-video="assets/videos/vidSeuJorge.mp4" data-title="SeuJorge">
+                  <img src="assets/thumbnails/SeuJorgeTMB.png" alt="Seu Jorge" class="thumbnail-image">
+                  <p>Seu Jorge</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="project">
-            <img src="assets/image/imageProjects/unicon1.jpg" alt="Projeto 2" />
-            <p>
-              Unicon<br />
-              Tapanã - Belém/PA
-            </p>
-          </div>
-          <div class="project">
-            <img
-              src="assets/image/imageProjects/sandroDias1.jpg"
-              alt="Projeto 2"
-            />
-            <p>
-              Sandro Dias<br />
-              Bela Vista - Marituba/PA
-            </p>
-          </div>
-          <div class="project">
-            <img
-              src="assets/image/imageProjects/robsonJunior1.jpg"
-              alt="Projeto 2"
-            />
-            <p>
-              Robson Júnior<br />
-              Caiçara - Castanhal/PA
-            </p>
-          </div>
-          <div class="project">
-            <img
-              src="assets/image/imageProjects/ivanPereira1.jpg"
-              alt="Projeto 2"
-            />
-            <p>
-              Ivan Pereira<br />
-              Novo Estrela - Castanhal/PA
-            </p>
-          </div>
-          <div class="project">
-            <img
-              src="assets/image/imageProjects/adrianoSales1.jpg"
-              alt="Projeto 2"
-            />
-            <p>
-              Adriano Sales<br />
-              Nova Olinda - Castanhal/PA
-            </p>
-          </div>
-          <div class="project">
-            <img
-              src="assets/image/imageProjects/edissonAraujo1.jpg"
-              alt="Projeto 2"
-            />
-            <p>
-              Edisson Araújo<br />
-              Levilândia - Ananindeua/PA
-            </p>
-          </div>
-          <div class="project">
-            <img
-              src="assets/image/imageProjects/waldeisson1.jpg"
-              alt="Projeto 2"
-            />
-            <p>
-              José Waldeison<br />
-              Imperador - Castanhal/PA
-            </p>
-          </div>
-          <div class="project">
-            <img
-              src="assets/image/imageProjects/rogerMendes1.jpg"
-              alt="Projeto 2"
-            />
-            <p>
-              Roger Mendes<br />
-              Caiçara - Castanhal/PA
-            </p>
-          </div>
-          <div class="project">
-            <img
-              src="assets/image/imageProjects/joseliCastro1.jpg"
-              alt="Projeto 2"
-            />
-            <p>
-              Joseli Castro<br />
-              Marambaia - Belém/PA
-            </p>
-          </div>
-          <div class="project">
-            <img
-              src="assets/image/imageProjects/weverton1.jpg"
-              alt="Projeto 2"
-            />
-            <p>
-              Weverton Araújo<br />
-              Estrela - Castanhal/PA
-            </p>
-          </div>
-          <div class="project">
-            <img
-              src="assets/image/imageProjects/francilene.jpg"
-              alt="Projeto 2"
-            />
-            <p>
-              Francilene Alves<br />
-              Caiçara - Castanhal/PA
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer-animation">
-      <img src="assets/image/wave.svg" alt="wave" />
-
-      <div id="footer_itens">
-        <span id="copyright"> &copy 2025 Sansol Engenharia </span>
-
-        <div class="social_media_buttons">
-          <a href="https://wa.me/5591991184053">
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-
-          <a href="https://www.instagram.com/sansolengenhariasolar/reel/C_QRsyiOmXO/">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-
-          <a href="https://www.facebook.com/sansolananin?mibextid=LQQJ4d&rdid=DOF5KViFE39wYQrm&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F15ba8bXxgq%2F%3Fmibextid%3DLQQJ4d#">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-
-          <a href="https://www.youtube.com/@SansolCidadeNova">
-            <i class="fa-brands fa-youtube"></i>
-          </a>
-        </div>
+        </section>
 
       </div>
-    </footer>
-    <script src="js/script.js"></script>
-  </body>
+      </div>
+      </div>
+    </section>
+    </section>
+
+    <section id="about">
+      <div class="about-logo">
+        <img src="assets/image/sansolLogoBack.png" alt="Logo da Empresa" />
+      </div>
+
+      <div class="about-text">
+        <p>
+          Desde 2012, o governo brasileiro incentiva o uso de energia solar,
+          oferecendo descontos na conta de luz para quem adere a essa solução
+          sustentável. E desde 2015, estamos ajudando famílias e empresas no
+          Pará a economizar até
+          <strong>80%</strong> na conta de energia, com instalações rápidas,
+          seguras e sem complicações. <br /><br />
+          Já são centenas de clientes satisfeitos que transformaram suas vidas
+          e negócios com a energia solar. E o melhor, contam com o melhor
+          serviço de pós-venda do estado, garantindo tranquilidade e suporte
+          sempre que precisarem. <br /><br />
+          Nossa missão é simples: democratizar o acesso à energia solar,
+          levando economia e sustentabilidade para cada vez mais lares e
+          empresas no Pará. <br /><br />
+          <strong>Solicite uma sessão de orientação agora mesmo</strong> e dê
+          o primeiro passo para reduzir sua conta de luz de forma definitiva!
+        </p>
+      </div>
+
+      <button id="projects-btn">
+        Veja nossos projetos <i class="fa-solid fa-chevron-down"></i>
+      </button>
+
+      <div id="projects-frame" class="hidden">
+        <div class="project">
+          <img src="assets/image/imageProjects/norteGeradores1.jpg" alt="Projeto 1" />
+          <p>
+            Norte Geradores<br />
+            Centro - Benevides/PA
+          </p>
+        </div>
+        <div class="project">
+          <img src="assets/image/imageProjects/unicon1.jpg" alt="Projeto 2" />
+          <p>
+            Unicon<br />
+            Tapanã - Belém/PA
+          </p>
+        </div>
+        <div class="project">
+          <img src="assets/image/imageProjects/sandroDias1.jpg" alt="Projeto 2" />
+          <p>
+            Sandro Dias<br />
+            Bela Vista - Marituba/PA
+          </p>
+        </div>
+        <div class="project">
+          <img src="assets/image/imageProjects/robsonJunior1.jpg" alt="Projeto 2" />
+          <p>
+            Robson Júnior<br />
+            Caiçara - Castanhal/PA
+          </p>
+        </div>
+        <div class="project">
+          <img src="assets/image/imageProjects/ivanPereira1.jpg" alt="Projeto 2" />
+          <p>
+            Ivan Pereira<br />
+            Novo Estrela - Castanhal/PA
+          </p>
+        </div>
+        <div class="project">
+          <img src="assets/image/imageProjects/adrianoSales1.jpg" alt="Projeto 2" />
+          <p>
+            Adriano Sales<br />
+            Nova Olinda - Castanhal/PA
+          </p>
+        </div>
+        <div class="project">
+          <img src="assets/image/imageProjects/edissonAraujo1.jpg" alt="Projeto 2" />
+          <p>
+            Edisson Araújo<br />
+            Levilândia - Ananindeua/PA
+          </p>
+        </div>
+        <div class="project">
+          <img src="assets/image/imageProjects/waldeisson1.jpg" alt="Projeto 2" />
+          <p>
+            José Waldeison<br />
+            Imperador - Castanhal/PA
+          </p>
+        </div>
+        <div class="project">
+          <img src="assets/image/imageProjects/rogerMendes1.jpg" alt="Projeto 2" />
+          <p>
+            Roger Mendes<br />
+            Caiçara - Castanhal/PA
+          </p>
+        </div>
+        <div class="project">
+          <img src="assets/image/imageProjects/joseliCastro1.jpg" alt="Projeto 2" />
+          <p>
+            Joseli Castro<br />
+            Marambaia - Belém/PA
+          </p>
+        </div>
+        <div class="project">
+          <img src="assets/image/imageProjects/weverton1.jpg" alt="Projeto 2" />
+          <p>
+            Weverton Araújo<br />
+            Estrela - Castanhal/PA
+          </p>
+        </div>
+        <div class="project">
+          <img src="assets/image/imageProjects/francilene.jpg" alt="Projeto 2" />
+          <p>
+            Francilene Alves<br />
+            Caiçara - Castanhal/PA
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-animation">
+    <img src="assets/image/wave.svg" alt="wave" />
+
+    <div id="footer_itens">
+      <span id="copyright"> &copy 2025 Sansol Engenharia </span>
+
+      <div class="social_media_buttons">
+        <a href="https://wa.me/5591991184053" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i>
+      </a>
+      
+      <a href="https://www.instagram.com/sansolengenhariasolar/reel/C_QRsyiOmXO/" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+      </a>
+      
+      <a href="https://www.facebook.com/sansolananin?mibextid=LQQJ4d&rdid=DOF5KViFE39wYQrm&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F15ba8bXxgq%2F%3Fmibextid%3DLQQJ4d#" target="_blank">
+          <i class="fa-brands fa-facebook"></i>
+      </a>
+      
+      <a href="https://www.youtube.com/@SansolCidadeNova" target="_blank">
+          <i class="fa-brands fa-youtube"></i>
+      </a>
+      
+      <a href="https://www.linkedin.com/company/sansol-engenharia-solar-cidade-nova/" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+      </a>
+      
+      <a href="https://www.tiktok.com/@sansolananin?is_from_webapp=1&sender_device=pc" target="_blank">
+          <i class="fa-brands fa-tiktok"></i>
+      </a>      
+      </div>
+
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+
 </html>
