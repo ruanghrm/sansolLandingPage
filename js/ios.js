@@ -558,7 +558,8 @@ $(document).ready(function() {
             return;
         }
 
-        localStorage.setItem('name', name); 
+        localStorage.setItem('name', name);
+        localStorage.setItem('phone', phone); 
 
         if (name && phone && bill) {
             $.ajax({
