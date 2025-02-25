@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     var contaComSolar = localStorage.getItem('contaComSolar');
 
@@ -12,9 +13,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 $(document).ready(function() {
     var name = localStorage.getItem('name');
-
     if (name) {
         $('#name').text(name);
+    }
+
+    var phone = localStorage.getItem('phone');
+    if (phone) {
+        var formattedPhone = phone.replace(/\D/g, '');
+
+        if (!formattedPhone.startsWith('55')) {
+            formattedPhone = '55' + formattedPhone;
+        }
+
+        $('#whatsApp-link').attr('href', 'https://wa.me/' + formattedPhone);
     }
 });
 
