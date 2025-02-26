@@ -1,191 +1,248 @@
 #simulations {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        background: linear-gradient(to right, #1e3c72, #2a5298);
-        color: white;
-        padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+    padding: 50px 20px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#simulation-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#simulation-form input {
+    padding: 12px;
+    width: 100%;
+    max-width: 280px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#simulation-form input:focus {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+#simulate-btn {
+    padding: 12px 25px;
+    background-color: #fe6b0e;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#simulate-btn:hover {
+    background-color: #ed8544;
+}
+
+#simulation-result {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+#whatsApp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    background-color: #25D366;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    margin-top: 15px;
+}
+
+#whatsApp-btn p {
+    margin: 0;
+    font-size: 16px;
+}
+
+#whatsApp-btn i {
+    font-size: 20px;
+}
+
+.btn-bill {
+    margin-top: 10px;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(30, 60, 114, 0.4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-bill::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 70%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.btn-bill:hover {
+    background: linear-gradient(135deg, #2a5298, #1e3c72);
+    box-shadow: 0 6px 20px rgba(30, 60, 114, 0.6);
+    transform: translateY(-3px);
+}
+
+.btn-bill:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.btn-bill:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(30, 60, 114, 0.4);
+}
+
+.btn-bill:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(30, 60, 114, 0.5);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-bill.pulse {
+    animation: pulse 2s infinite;
+}
+
+#whatsApp-btn:hover {
+    background-color: #038131;
+}
+
+@media screen and (max-width: 768px) {
+    #simulations {
+        padding: 40px 10px;
     }
 
     .section-title {
-        font-size: 2rem;
-        font-weight: bold;
-        text-transform: uppercase;
+        font-size: 1.5rem;
     }
 
     .section-subtitle {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
+        font-size: 1rem;
     }
 
     #simulation-form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        background: rgba(255, 255, 255, 0.2);
-        padding: 25px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        max-width: 90%;
     }
 
     #simulation-form input {
-        padding: 12px;
-        width: 100%;
-        max-width: 280px;
-        border: none;
-        border-radius: 5px;
-        font-size: 1rem;
-        outline: none;
-        transition: all 0.3s ease;
-    }
-
-    #simulation-form input:focus {
-        box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+        padding: 10px;
+        font-size: 0.9rem;
     }
 
     #simulate-btn {
-        padding: 12px 25px;
-        background-color: #fe6b0e;
-        color: white;
-        font-weight: bold;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-    #simulate-btn:hover {
-        background-color: #ed8544;
+        padding: 10px 20px;
     }
 
     #simulation-result {
-        margin-top: 30px;
-        padding: 20px;
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.2);
-        text-align: center;
-        color: white;
-        font-size: 1.2rem;
-        display: none;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .hidden {
-        display: none;
+        font-size: 1rem;
     }
 
     #whatsApp-btn {
-        display: inline-flex;
-        align-items: center; 
-        gap: 8px;
-        padding: 10px 15px;
-        background-color: #25D366;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        color: white;
-        margin-top: 15px;
-      }
-      
-      #whatsApp-btn p {
-        margin: 0;
-        font-size: 16px;
-      }
-      
-      #whatsApp-btn i {
-        font-size: 20px; 
-      }
-
-      .btn-bill {
-        background-color: #1e3c72;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        gap: 8px;
-        margin-top: 15px;
-        padding: 10px 15px;
-        cursor: pointer;
-      }
-
-      .btn-bill:hover {
-        background-color: #0d1f42 
-      }
-
-      #whatsApp-btn:hover {
-        background-color: #038131;
-      }
-
-      @media screen and (max-width: 768px) {
-        #simulations {
-            padding: 40px 10px;
-        }
-    
-        .section-title {
-            font-size: 1.5rem; 
-        }
-    
-        .section-subtitle {
-            font-size: 1rem;
-        }
-    
-        #simulation-form {
-            padding: 20px;
-            max-width: 90%; 
-        }
-    
-        #simulation-form input {
-            padding: 10px;
-            font-size: 0.9rem; 
-        }
-    
-        #simulate-btn {
-            padding: 10px 20px; 
-        }
-    
-        #simulation-result {
-            font-size: 1rem; 
-        }
-    
-        #whatsApp-btn {
-            font-size: 14px;
-        }
-    
-        .btn-bill {
-            padding: 8px 12px; 
-        }
+        font-size: 14px;
     }
-    
-    @media screen and (max-width: 450px) {
-        .section-title {
-            font-size: 1.2rem;
-        }
-    
-        .section-subtitle {
-            font-size: 0.9rem;
-        }
-    
-        #simulation-form {
-            padding: 15px;
-        }
-    
-        #simulation-form input {
-            width: 100%;
-            padding: 8px; 
-        }
-    
-        #simulate-btn {
-            padding: 8px 15px; 
-        }
-    
-        #whatsApp-btn {
-            padding: 8px 12px; 
-        }
-    
-        .btn-bill {
-            padding: 8px 12px; 
-        }
-    }  
-      
+
+    .btn-bill {
+        padding: 8px 12px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+
+    #simulation-form {
+        padding: 15px;
+    }
+
+    #simulation-form input {
+        width: 100%;
+        padding: 8px;
+    }
+
+    #simulate-btn {
+        padding: 8px 15px;
+    }
+
+    #whatsApp-btn {
+        padding: 8px 12px;
+    }
+
+    .btn-bill {
+        padding: 8px 12px;
+    }
+}
