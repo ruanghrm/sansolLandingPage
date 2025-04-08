@@ -544,44 +544,66 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function() {
-    $('#simulate-btn').click(function(e) {
+$(document).ready(function () {
+    $('#simulate-btn').click(function (e) {
         e.preventDefault();
 
-        var name = $('#name').val();
-        var phone = $('#phone').val();
-        var bill = $('#bill').val();
-        var vendedor = $('#seller').val();
+        var name = $('#name').val().trim();
+        var phone = $('#phone').val().trim();
+        var bill = $('#bill').val().trim();
+        var vendedor = $('#seller').val().trim();
 
         var phoneRegex = /^\(\d{2}\) 9\d{4}-\d{4}$/;
         if (!phoneRegex.test(phone)) {
+            alert('Telefone inválido!');
             return;
         }
 
-        localStorage.setItem('name', name);
-        localStorage.setItem('phone', phone); 
-
         if (name && phone && bill) {
-            $.ajax({
-                url: 'https://www.sansolenergiasolar.com.br/api/clientes',
-                type: 'POST',
-                contentType: 'application/json', 
-                data: JSON.stringify({
-                    nome: name,
-                    numero: phone,
-                    contaLuz: bill,
-                    vendedor: vendedor
-                }),
-                success: function(response) {
-                    console.log('✅ right', response);
-                },
-                error: function(xhr, status, error) {
-                    console.error('❌ wrong: ' + error);
-                }
-            });
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function (position) {
+                        var latitude = position.coords.latitude;
+                        var longitude = position.coords.longitude;
+
+                        const payload = {
+                            nome: name,
+                            numero: phone,
+                            contaLuz: bill,
+                            vendedor: vendedor,
+                            latitude: latitude,
+                            longitude: longitude
+                        };
+
+                        console.log('📦 Enviando dados:', payload);
+
+                        $.ajax({
+                            url: 'https://www.sansolenergiasolar.com.br/api/clientes',
+                            type: 'POST',
+                            contentType: 'application/json',
+                            data: JSON.stringify(payload),
+                            success: function (response) {
+                                console.log('✅ Enviado com sucesso:', response);
+                            },
+                            error: function (xhr, status, error) {
+                                console.error('❌ Erro ao enviar: ' + error);
+                            }
+                        });
+                    },
+                    function (error) {
+                        alert('Erro ao obter localização: ' + error.message);
+                    },
+                    {
+                        enableHighAccuracy: true,
+                        timeout: 10000,
+                        maximumAge: 0
+                    }
+                );
+            } else {
+                alert('Geolocalização não é suportada neste navegador.');
+            }
         } else {
             alert('Por favor, preencha todos os campos.');
         }
     });
 });
-
