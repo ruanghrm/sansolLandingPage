@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
         contaComSolar = parseFloat(contaComSolar);
         console.log(contaComSolar);
         document.getElementById('total-to-pay').textContent = `R$ ${contaComSolar.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        localStorage.removeItem('contaComSolar');
-        console.log(contaComSolar);
         
     } else {
         console.log("Valor não encontrado!");
@@ -19,8 +17,6 @@ $(document).ready(function() {
     if (name) {
         console.log(name);
         $('#name').text(name);
-        localStorage.removeItem('name');
-        console.log(name);
     }
 
     var phone = localStorage.getItem('phone');
@@ -32,7 +28,6 @@ $(document).ready(function() {
         }
 
         $('#whatsApp-link').attr('href', 'https://wa.me/' + formattedPhone);
-        localStorage.removeItem('phone');
     }
 });
 
