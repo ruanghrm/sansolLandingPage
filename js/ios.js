@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let parcelaBanco84 = 0;
         let valor25AnosCom = 0;
         let valor25AnosSem = 0;
+        let name = document.getElementById('name').value.trim();
 
         if (numericCost < 100) {
             contaSemSolar = numericCost;
@@ -513,6 +514,7 @@ document.addEventListener("DOMContentLoaded", function () {
             valor25AnosCom = 5659462.18;
         }
 
+        localStorage.setItem('name', name);
         localStorage.setItem('contaComSolar', contaComSolar);
 
         document.getElementById('contaSemSolar').textContent = `R$ ${contaSemSolar.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
@@ -587,6 +589,12 @@ $(document).ready(function () {
                             },
                             error: function (xhr, status, error) {
                                 console.error('❌ Erro ao enviar: ' + error);
+
+                                if (xhr.status === 500 && xhr.responseText.includes('telefone')) {
+                                    alert('Este número de telefone já foi cadastrado!');
+                                } else {
+                                    alert('Ocorreu um erro ao enviar os dados. Tente novamente mais tarde.');
+                                }
                             }
                         });
                     },
@@ -607,3 +615,4 @@ $(document).ready(function () {
         }
     });
 });
+
