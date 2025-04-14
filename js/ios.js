@@ -590,7 +590,7 @@ $(document).ready(function () {
                             error: function (xhr, status, error) {
                                 console.error('❌ Erro ao enviar: ' + error);
 
-                                if (xhr.status === 500){
+                                if (xhr.status === 500 && error === 500){
                                     alert('Este número de telefone já foi cadastrado!');
                                 } else {
                                     alert('Ocorreu um erro ao enviar os dados. Tente novamente mais tarde.');
