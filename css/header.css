@@ -37,7 +37,7 @@ header {
 
 .nav-item.active a {
     color: white;
-    border-bottom: 3px solid #011659;
+    border-bottom: 3px solid white;
 }
 
 #mobile_btn {

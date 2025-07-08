@@ -577,7 +577,7 @@ $(document).ready(function () {
                             longitude: longitude
                         };
 
-                        console.log('📦 Enviando dados:', payload);
+                        console.log('📦 Enviando dados com localização:', payload);
 
                         $.ajax({
                             url: 'https://www.sansolenergiasolar.com.br/api/clientes',
@@ -589,7 +589,6 @@ $(document).ready(function () {
                             },
                             error: function (xhr, status, error) {
                                 console.error('❌ Erro ao enviar: ' + error);
-
                                 if (xhr.status === 500 && error === 500){
                                     alert('Este número de telefone já foi cadastrado!');
                                 } else {
@@ -599,7 +598,36 @@ $(document).ready(function () {
                         });
                     },
                     function (error) {
-                        alert('Erro ao obter localização: ' + error.message);
+                        alert('Não foi possível obter a localização. Continuando sem ela...');
+
+                        const payload = {
+                            nome: name,
+                            numero: phone,
+                            contaLuz: bill,
+                            vendedor: vendedor,
+                            latitude: null,
+                            longitude: null
+                        };
+
+                        console.log('📦 Enviando dados sem localização:', payload);
+
+                        $.ajax({
+                            url: 'https://www.sansolenergiasolar.com.br/api/clientes',
+                            type: 'POST',
+                            contentType: 'application/json',
+                            data: JSON.stringify(payload),
+                            success: function (response) {
+                                console.log('✅ Enviado com sucesso:', response);
+                            },
+                            error: function (xhr, status, error) {
+                                console.error('❌ Erro ao enviar: ' + error);
+                                if (xhr.status === 500 && error === 500){
+                                    alert('Este número de telefone já foi cadastrado!');
+                                } else {
+                                    alert('Ocorreu um erro ao enviar os dados. Tente novamente mais tarde.');
+                                }
+                            }
+                        });
                     },
                     {
                         enableHighAccuracy: true,
@@ -608,7 +636,36 @@ $(document).ready(function () {
                     }
                 );
             } else {
-                alert('Geolocalização não é suportada neste navegador.');
+                alert('Geolocalização não é suportada neste navegador. Continuando sem ela...');
+
+                const payload = {
+                    nome: name,
+                    numero: phone,
+                    contaLuz: bill,
+                    vendedor: vendedor,
+                    latitude: null,
+                    longitude: null
+                };
+
+                console.log('📦 Enviando dados sem localização:', payload);
+
+                $.ajax({
+                    url: 'https://www.sansolenergiasolar.com.br/api/clientes',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(payload),
+                    success: function (response) {
+                        console.log('✅ Enviado com sucesso:', response);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('❌ Erro ao enviar: ' + error);
+                        if (xhr.status === 500 && error === 500){
+                            alert('Este número de telefone já foi cadastrado!');
+                        } else {
+                            alert('Ocorreu um erro ao enviar os dados. Tente novamente mais tarde.');
+                        }
+                    }
+                });
             }
         } else {
             alert('Por favor, preencha todos os campos.');
