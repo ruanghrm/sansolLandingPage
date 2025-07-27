@@ -537,7 +537,7 @@ $(document).ready(function() {
         success: function(response) {
             var sellerSelect = $('#seller');
             response.forEach(function(vendedor) {
-                sellerSelect.append('<option value="' + vendedor + '">' + vendedor + '</option>');
+                sellerSelect.append('<option value="' + vendedor.nome + '">' + vendedor.nome + '</option>');
             });
         },
         error: function(xhr, status, error) {
