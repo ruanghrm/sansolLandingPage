@@ -604,6 +604,7 @@ $(document).ready(function() {
 
         var phoneRegex = /^\(\d{2}\) 9\d{4}-\d{4}$/;
         if (!phoneRegex.test(phone)) {
+            alert('Telefone inválido. Use o formato (99) 9XXXX-XXXX.');
             return;
         }
 
@@ -612,19 +613,25 @@ $(document).ready(function() {
 
         if (name && phone && bill) {
             $.ajax({
-                url: 'https://www.sansolenergiasolar.com.br/api/clientes',
+                url: 'https://backend.sansolenergiasolar.com.br/api/v1/clientes/publico',
                 type: 'POST',
                 contentType: 'application/json', 
                 data: JSON.stringify({
                     nome: name,
                     numero: phone,
-                    contaLuz: bill
+                    contaLuz: bill,
+                    origem: 'landingpage' 
                 }),
                 success: function(response) {
-                    console.log('✅ right', response);
+                    console.log('✅ Cadastro enviado com sucesso:', response);
+
+                    // if (response.whatsappLink) {
+                    //     window.open(response.whatsappLink, '_blank');
+                    // }
                 },
                 error: function(xhr, status, error) {
-                    console.error('❌ wrong: ' + error);
+                    console.error('❌ Erro no envio:', error);
+                    alert('Erro ao enviar seus dados. Tente novamente.');
                 }
             });
         } else {
@@ -639,12 +646,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainVideoTitle = document.getElementById('main-video-title');
   
     thumbnails.forEach(thumbnail => {
-      thumbnail.addEventListener('click', function() {
-        const videoSrc = thumbnail.getAttribute('data-video');
-        const videoTitle = thumbnail.getAttribute('data-title');
+        thumbnail.addEventListener('click', function() {
+            const videoSrc = thumbnail.getAttribute('data-video');
+            const videoTitle = thumbnail.getAttribute('data-title');
   
-        mainVideoIframe.src = videoSrc;
-        mainVideoTitle.textContent = videoTitle;
-      });
+            mainVideoIframe.src = videoSrc;
+            mainVideoTitle.textContent = videoTitle;
+        });
     });
-  });
+});
