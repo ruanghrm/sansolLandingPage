@@ -1,135 +1,345 @@
+/* ================================
+   HOME SECTION — Sansol
+   ================================ */
+
 #home {
-    display: flex;
-    min-height: calc(100vh - 150px);
-    position: relative;
+  display: flex;
+  flex-direction: row-reverse; /* inverter ordem: form à esquerda, texto à direita */
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: calc(100vh - 150px);
+  position: relative;
 }
 
+/* --- CTA (textos e botões) --- */
 #cta {
-    width: 35%;
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-    margin-top: 5%;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 35px;
 }
 
 #cta .title {
-    font-size: 3rem;
-    color: #1d1d1d;
+  font-size: 3rem;
+  color: #1d1d1d;
 }
 
 #cta .title span {
-    font-size: 4rem;
-    color: #fe6b0e;
+  font-size: 3rem;
+  color: #fe6b0e;
 }
 
 #cta .description {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 #cta_buttons {
-    display: flex;
-    gap: 24px;
+  display: flex;
+  gap: 24px;
 }
 
 #cta_buttons a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 #phone_button {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    background-color: #fe6b0e;
-    padding: 8px 14px;
-    font-weight: 500;
-    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    transition: background-color .3s ease;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background-color: #fe6b0e;
+  padding: 8px 14px;
+  font-weight: 500;
+  box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
 }
 
 #phone_button button {
-    box-shadow: none;
-    color: white;
+  box-shadow: none;
+  color: white;
 }
 
 #phone_button p {
-    color: white;
-}
-
-#banner {
-    display: flex;
-    align-items: start;
-    justify-content: end;
-    width: 70%;
-    z-index: 2;
-}
-
-#banner img {
-    height: 100%;
-    width: 80%;
-
-}
-
-.shape {
-    background-color: #ffe8b4;
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    border-radius: 40% 30% 0% 20%;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    opacity: 1;
-}
-
-.text {
-    color: black;
-}
-
-.description {
-    font-size: 1px;
+  color: white;
 }
 
 #cta_buttons_mobile {
-    display: none;
+  display: none;
 }
 
+/* --- FUNDO AMARELO CURVADO --- */
+.shape {
+  background-color: #ffffff;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  border-radius: 30% 40% 20% 0%;
+  top: 0;
+  left: 0; /* move para o lado esquerdo */
+  z-index: 1;
+  opacity: 1;
+}
+
+/* --- FORMULÁRIO DE SIMULAÇÃO --- */
+#banner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: #333;
+  padding: 50px 20px;
+  border-radius: 0;
+  width: 70%;
+  max-width: 100%;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+#simulation-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  /* Fundo laranja com leve gradiente */
+  background: linear-gradient(145deg, #f85f0d, #ee5406);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.15),
+    inset 0 2px 8px rgba(255, 255, 255, 0.1);
+
+  padding: 40px 45px;
+  width: 100%;
+  max-width: 460px;
+  min-height: 380px;
+  max-height: 460px;
+  margin: 0 auto;
+
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  color: white;
+}
+
+/* --- Inputs sempre brancos --- */
+#simulation-form input {
+  padding: 12px 14px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#simulation-form input::placeholder {
+  color: #888;
+}
+
+#simulation-form input:focus {
+  border-color: #ffb47a;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* --- Botão principal --- */
+#simulate-btn {
+  padding: 12px 25px;
+  background-color: #e7e7e7;
+  color: #ee5406;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+#simulate-btn:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.25);
+}
+
+/* --- Resultados da simulação --- */
+#simulation-result {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff5ea;
+  text-align: center;
+  color: #333;
+  font-size: 1.1rem;
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+/* --- Botão WhatsApp --- */
+#whatsApp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background-color: #25d366;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  margin-top: 15px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+#whatsApp-btn p {
+  margin: 0;
+  font-size: 16px;
+}
+
+#whatsApp-btn i {
+  font-size: 20px;
+}
+
+#whatsApp-btn:hover {
+  background-color: #038131;
+}
+
+/* --- Botão "Ver Conta com Energia Solar" --- */
+.btn-bill {
+  margin-top: 10px;
+  background: #ff6a00;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 106, 0, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-bill::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.btn-bill:hover {
+  background: #ff7a2d;
+  box-shadow: 0 6px 20px rgba(255, 106, 0, 0.4);
+  transform: translateY(-3px);
+}
+
+.btn-bill:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.btn-bill:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(255, 106, 0, 0.3);
+}
+
+.btn-bill.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ================================
+   Responsividade
+   ================================ */
 @media screen and (max-width: 1170px) {
-    #home {
-        min-height: 100%;
-        padding-top: 0px;
-    }
+  #home {
+    flex-direction: column;
+    min-height: 100%;
+    padding-top: 0px;
+  }
 
-    #banner,
-    #banner img,
-    #home .shape{
-        display: none;
-    }
+  #banner,
+  #home .shape {
+    width: 100%;
+    padding: 0 20px;
+    border-radius: 0;
+  }
 
-    #cta {
-        width: 100%;
-        text-align: center;
-        align-items: center;
-    }
+  #cta {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    margin-top: 40px;
+  }
 
-    #cta_buttons {
-        display: none;
-    }
+  #cta_buttons {
+    display: none;
+  }
 
-    #cta_buttons_mobile {
-        display: flex;
-        gap: 24px;
-    }
-    
-    #cta_buttons_mobile a {
-        text-decoration: none;
-        color: white;
-    }
+  #cta_buttons_mobile {
+    display: flex;
+    gap: 24px;
+  }
+
+  #cta_buttons_mobile a {
+    text-decoration: none;
+    color: white;
+  }
+
+  #simulation-form {
+    max-width: 90%;
+    padding: 25px;
+  }
 }
 
 @media screen and (max-width: 450px) {
-    #phone_button {
-        display: none;
-    }
+  #phone_button {
+    display: none;
+  }
+
+  #simulation-form {
+    padding: 15px;
+  }
+
+  #simulation-form input {
+    width: 100%;
+    padding: 8px;
+  }
+
+  #simulate-btn {
+    padding: 8px 15px;
+  }
 }
