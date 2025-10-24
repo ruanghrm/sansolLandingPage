@@ -282,64 +282,134 @@
 }
 
 /* ================================
-   Responsividade
+   Responsividade — nova estrutura
    ================================ */
+
+/* --- Telas grandes (até 1170px) --- */
 @media screen and (max-width: 1170px) {
   #home {
     flex-direction: column;
-    min-height: 100%;
-    padding-top: 0px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 60px 20px;
+    min-height: auto;
   }
 
-  #banner,
-  #home .shape {
-    width: 100%;
-    padding: 0 20px;
-    border-radius: 0;
+  /* Remove a forma curvada lateral */
+  .shape {
+    display: none;
   }
 
+  /* Ajusta CTA */
   #cta {
     width: 100%;
     text-align: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 20px;
+    gap: 20px;
   }
 
+  #cta .title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+  }
+
+  #cta .title span {
+    color: #fe6b0e;
+  }
+
+  #cta .description {
+    font-size: 1.1rem;
+    max-width: 600px;
+  }
+
+  /* Oculta botões desktop e mostra os mobile */
   #cta_buttons {
     display: none;
   }
 
   #cta_buttons_mobile {
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
   }
 
-  #cta_buttons_mobile a {
-    text-decoration: none;
-    color: white;
+  /* Banner/form centralizado */
+  #banner {
+    width: 100%;
+    max-width: 520px;
+    padding: 0;
+    margin-top: 40px;
   }
 
   #simulation-form {
-    max-width: 90%;
+    max-width: 100%;
+    padding: 30px;
+  }
+}
+
+/* --- Telas médias (até 768px) --- */
+@media screen and (max-width: 768px) {
+  #home {
+    padding: 40px 15px;
+  }
+
+  #cta {
+    margin-top: 10px;
+    gap: 16px;
+  }
+
+  #cta .title {
+    font-size: 1.8rem;
+  }
+
+  #cta .description {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  #simulation-form {
     padding: 25px;
   }
 }
 
-@media screen and (max-width: 450px) {
+/* --- Telas pequenas (até 480px) --- */
+@media screen and (max-width: 480px) {
+  #home {
+    padding: 30px 10px;
+  }
+
+  #cta .title {
+    font-size: 1.6rem;
+  }
+
+  #cta .description {
+    font-size: 0.95rem;
+  }
+
+  #simulation-form {
+    padding: 18px;
+    max-width: 95%;
+  }
+
+  #simulation-form input {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  #simulate-btn {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+
   #phone_button {
     display: none;
   }
 
-  #simulation-form {
-    padding: 15px;
-  }
-
-  #simulation-form input {
-    width: 100%;
-    padding: 8px;
-  }
-
-  #simulate-btn {
-    padding: 8px 15px;
+  #whatsApp-btn {
+    font-size: 14px;
+    padding: 8px 14px;
   }
 }
