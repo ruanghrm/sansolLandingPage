@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" type="image/png" href="assets/icons/favicon.ico">
   <link rel="apple-touch-icon" sizes="192x192" href="assets/icons/android-chrome-192x192.png">
   <link rel="apple-touch-icon" sizes="512x512" href="assets/icons/android-chrome-512x512.png">
@@ -16,7 +16,16 @@
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
-  
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-48VZE5S8R0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-48VZE5S8R0');
+  </script>
+
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -25,15 +34,16 @@
       }); var f = d.getElementsByTagName(s)[0],
         j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-TRKBJF7G');</script>
+    })(window, document, 'script', 'dataLayer', 'GTM-NLLQWW3K');</script>
   <!-- End Google Tag Manager -->
-  <title>Sansol Engenharia - Cidade Nova</title>
 </head>
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TRKBJF7G" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLLQWW3K" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <header>
@@ -144,46 +154,46 @@
       </div>
 
       <div id="banner">
-      <div id="simulation-form">
-        <input type="text" id="name" placeholder="Nome" required />
-        <input type="tel" id="phone" placeholder="Telefone" required />
-        <input type="text" id="bill" placeholder="Valor da Conta de Luz" required />
-        <button id="simulate-btn">Calcular</button>
+        <div id="simulation-form">
+          <input type="text" id="name" placeholder="Nome" required />
+          <input type="tel" id="phone" placeholder="Telefone" required />
+          <input type="text" id="bill" placeholder="Valor da Conta de Luz" required />
+          <button id="simulate-btn">Calcular</button>
+        </div>
+
+        <div id="simulation-result" class="hidden">
+          <h3>Resultados da Simulação</h3>
+          <br>
+          <p>💡 Conta <strong>SEM</strong> Energia Solar: <span id="contaSemSolar">R$0,00</span></p>
+          <p>💸 Desconto Mensal: <span id="economiaMensal">R$0,00</span></p>
+          <p>💡 Conta <strong>COM</strong> Energia Solar: <span id="contaComSolar">R$0,00</span></p>
+          <p>🏦 Investimento Kit Solar: <span id="parcelaBanco84">R$0,00</span></p>
+          <p>📅 Kit Solar: <span id="numeroMod">0</span> Placas <span id="description"></span></p>
+          <p>💰 Nos próximos anos irei <strong>perder para EQUATORIAL</strong> sem energia solar:
+            <span id="valor25AnosSem">R$0,00</span>
+          </p>
+          <p>💰 Minha <strong>economia com energia solar</strong> nos próximos anos:
+            <span id="valor25AnosCom">R$0,00</span>
+          </p>
+
+          <br /><br />
+          <h3>Quer Economizar?</h3>
+          <br />
+          <h3>Entre em contato pelo nosso WhatsApp</h3>
+
+          <a href="https://wa.me/5591991184053" target="_blank">
+            <button id="whatsApp-btn" class="fa-brands fa-whatsapp">
+              <p>Falar no WhatsApp</p>
+            </button>
+          </a>
+
+          <a href="conta-energia.html">
+            <br /><button class="btn-bill pulse">
+              VEJA SUA CONTA COM ENERGIA SOLAR
+            </button>
+          </a>
+        </div>
       </div>
-
-      <div id="simulation-result" class="hidden">
-        <h3>Resultados da Simulação</h3>
-        <br>
-        <p>💡 Conta <strong>SEM</strong> Energia Solar: <span id="contaSemSolar">R$0,00</span></p>
-        <p>💸 Desconto Mensal: <span id="economiaMensal">R$0,00</span></p>
-        <p>💡 Conta <strong>COM</strong> Energia Solar: <span id="contaComSolar">R$0,00</span></p>
-        <p>🏦 Investimento Kit Solar: <span id="parcelaBanco84">R$0,00</span></p>
-        <p>📅 Kit Solar: <span id="numeroMod">0</span> Placas <span id="description"></span></p>
-        <p>💰 Nos próximos anos irei <strong>perder para EQUATORIAL</strong> sem energia solar:
-          <span id="valor25AnosSem">R$0,00</span>
-        </p>
-        <p>💰 Minha <strong>economia com energia solar</strong> nos próximos anos:
-          <span id="valor25AnosCom">R$0,00</span>
-        </p>
-
-        <br /><br />
-        <h3>Quer Economizar?</h3>
-        <br />
-        <h3>Entre em contato pelo nosso WhatsApp</h3>
-
-        <a href="https://wa.me/5591991184053" target="_blank">
-          <button id="whatsApp-btn" class="fa-brands fa-whatsapp">
-            <p>Falar no WhatsApp</p>
-          </button>
-        </a>
-
-        <a href="conta-energia.html">
-          <br /><button class="btn-bill pulse">
-            VEJA SUA CONTA COM ENERGIA SOLAR
-          </button>
-        </a>
-      </div>
-    </div>
 
       <!-- <div id="banner">
         <img src="assets/image/hero1.png" alt="" />
