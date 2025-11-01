@@ -612,19 +612,37 @@ $(document).ready(function() {
         localStorage.setItem('phone', phone); 
 
         if (name && phone && bill) {
+            var payload = {
+                nome: name,
+                numero: phone,
+                contaLuz: bill,
+                origem: 'landingpage'
+            };
+
+            // Envia para o backend
             $.ajax({
                 url: 'https://backend.sansolenergiasolar.com.br/api/v1/clientes/publico',
                 type: 'POST',
                 contentType: 'application/json', 
-                data: JSON.stringify({
-                    nome: name,
-                    numero: phone,
-                    contaLuz: bill,
-                    origem: 'landingpage' 
-                }),
+                data: JSON.stringify(payload),
                 success: function(response) {
                     console.log('✅ Cadastro enviado com sucesso:', response);
 
+                    // 🔹 Envia para o Make após sucesso no backend
+                    $.ajax({
+                        url: 'https://hook.us1.make.com/34ggrx9kcjmbbivqjftba23qiuvd6qjq',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify(payload),
+                        success: function(makeResponse) {
+                            console.log('✅ Dados enviados para o Make com sucesso!', makeResponse);
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('⚠️ Erro ao enviar dados para o Make:', error);
+                        }
+                    });
+
+                    // Se quiser abrir WhatsApp ou outro link do response
                     // if (response.whatsappLink) {
                     //     window.open(response.whatsappLink, '_blank');
                     // }
@@ -639,6 +657,7 @@ $(document).ready(function() {
         }
     });
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const thumbnails = document.querySelectorAll('.thumbnail-item');
