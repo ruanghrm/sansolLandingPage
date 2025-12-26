@@ -626,7 +626,7 @@ $(document).ready(function() {
                 contentType: 'application/json', 
                 data: JSON.stringify(payload),
                 success: function(response) {
-                    console.log('✅ Cadastro enviado com sucesso:', response);
+                    //console.log('✅ Cadastro enviado com sucesso:', response);
 
                     // 🔹 Envia para o Make após sucesso no backend
                     $.ajax({
@@ -635,10 +635,10 @@ $(document).ready(function() {
                         contentType: 'application/json',
                         data: JSON.stringify(payload),
                         success: function(makeResponse) {
-                            console.log('✅ Dados enviados para o Make com sucesso!', makeResponse);
+                            //console.log('✅ Dados enviados para o Make com sucesso!', makeResponse);
                         },
                         error: function(xhr, status, error) {
-                            console.error('⚠️ Erro ao enviar dados para o Make:', error);
+                            //console.error('⚠️ Erro ao enviar dados para o Make:', error);
                         }
                     });
 
@@ -648,8 +648,8 @@ $(document).ready(function() {
                     // }
                 },
                 error: function(xhr, status, error) {
-                    console.error('❌ Erro no envio:', error);
-                    alert('Erro ao enviar seus dados. Tente novamente.');
+                    //console.error('❌ Erro no envio:', error);
+                    //alert('Erro ao enviar seus dados. Tente novamente.');
                 }
             });
         } else {
