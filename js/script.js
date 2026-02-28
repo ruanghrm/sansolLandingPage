@@ -616,7 +616,8 @@ $(document).ready(function() {
                 nome: name,
                 numero: phone,
                 contaLuz: bill,
-                origem: 'landingpage'
+                origem: 'landingpage',
+                observacoes: 'Cliente registrado na landing page'
             };
 
             // Envia para o backend
@@ -626,7 +627,7 @@ $(document).ready(function() {
                 contentType: 'application/json', 
                 data: JSON.stringify(payload),
                 success: function(response) {
-                    //console.log('✅ Cadastro enviado com sucesso:', response);
+                    console.log("payload: " + JSON.stringify(payload) + ' ✅ Cadastro enviado com sucesso:', response);
 
                     // 🔹 Envia para o Make após sucesso no backend
                     $.ajax({

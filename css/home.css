@@ -203,7 +203,7 @@
 
 #whatsApp-btn p {
   margin: 0;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 #whatsApp-btn i {
@@ -214,9 +214,41 @@
   background-color: #038131;
 }
 
+.mensagem-pequena {
+  font-size: 16px;      /* diminui o tamanho */
+  font-style: italic;   /* deixa em itálico */
+  color: #666;          /* opcional: deixa mais discreto */
+  margin-top: 8px;      /* opcional: ajusta espaçamento */
+}
+
 /* --- Botão "Ver Conta com Energia Solar" --- */
 .btn-bill {
   margin-top: 10px;
+  background: #ff6a00;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 30px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 106, 0, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ocultar {
+  display: none !important;
+}
+
+.btn-bills {
+  margin-top: 10px;
+  margin-bottom: 15px;
   background: #ff6a00;
   color: white;
   border: none;

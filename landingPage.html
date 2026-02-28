@@ -162,13 +162,23 @@
         </div>
 
         <div id="simulation-result" class="hidden">
-          <h3>Resultados da Simulação</h3>
+          <button class="btn-bills">
+              RESULTADOS DA SIMULAÇÃO
+            </button>
           <br>
           <p>💡 Conta <strong>SEM</strong> Energia Solar: <span id="contaSemSolar">R$0,00</span></p>
           <p>💸 Desconto Mensal: <span id="economiaMensal">R$0,00</span></p>
           <p>💡 Conta <strong>COM</strong> Energia Solar: <span id="contaComSolar">R$0,00</span></p>
-          <p>🏦 Investimento Kit Solar: <span id="parcelaBanco84">R$0,00</span></p>
-          <p>📅 Kit Solar: <span id="numeroMod">0</span> Placas <span id="description"></span></p>
+          <p class="ocultar">
+            🏦 Investimento Kit Solar: 
+            <span id="parcelaBanco84">R$0,00</span>
+          </p>
+
+          <p class="ocultar">
+            📅 Kit Solar: 
+            <span id="numeroMod">0</span> 
+            Placas <span id="description"></span>
+          </p>
           <p>💰 Nos próximos anos irei <strong>perder para EQUATORIAL</strong> sem energia solar:
             <span id="valor25AnosSem">R$0,00</span>
           </p>
@@ -176,14 +186,18 @@
             <span id="valor25AnosCom">R$0,00</span>
           </p>
 
-          <br /><br />
-          <h3>Quer Economizar?</h3>
+          <br />
+          <p class="mensagem-pequena">Essa é uma simulação prévia. Para um orçamento personalizado, mande mensagem para o nosso time.</p>
+
+          <br />
+          <h2>Quer Economizar?</h2>
           <br />
           <h3>Entre em contato pelo nosso WhatsApp</h3>
 
           <a href="https://wa.me/5591991184053" target="_blank">
-            <button id="whatsApp-btn" class="fa-brands fa-whatsapp">
-              <p>Falar no WhatsApp</p>
+            <button id="whatsApp-btn">
+              <i class="fa-brands fa-whatsapp"></i>
+              <p>RECEBA SEU ORÇAMENTO GRATUITO</p>
             </button>
           </a>
 
